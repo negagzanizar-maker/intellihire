@@ -29,6 +29,12 @@
       .icon-line { stroke: #20364d; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
       .icon-fill { fill: #20364d; }
       .key-line { stroke-width: 2; fill: none; }
+      .credit { fill: #ffffff; stroke: #d3dde8; stroke-width: 1.5; rx: 10; }
+      .credit-title { font: 800 13px Arial, sans-serif; fill: #20364d; }
+      .credit-name { font: 800 12px Arial, sans-serif; fill: #20364d; }
+      .credit-text { font: 600 11px Arial, sans-serif; fill: #5b6878; }
+      .credit-dina { fill: #dff3fb; stroke: #65a9c6; stroke-width: 1; }
+      .credit-nizar { fill: #eee8fb; stroke: #8b6cc2; stroke-width: 1; }
     </style>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
       <path d="M0,0 L9,3 L0,6 Z" fill="#2e455d"/>
@@ -249,6 +255,18 @@
     <text class="risk-title" x="14" y="25">Known demo data issue</text>
     <text class="risk-text" x="14" y="48">Seeded cv_demo paths can</text>
     <text class="risk-text" x="14" y="64">point to missing files.</text>
+  </g>
+
+  <!-- Contribution note -->
+  <g transform="translate(42 790)">
+    <rect class="credit" x="0" y="0" width="640" height="76"/>
+    <text class="credit-title" x="18" y="24">Contribution map</text>
+    <circle class="credit-dina" cx="24" cy="45" r="6"/>
+    <text class="credit-name" x="40" y="49">EL MEAAMMAR Dina</text>
+    <text class="credit-text" x="174" y="49">backend package: offers, interviews, models, database config and schema</text>
+    <circle class="credit-nizar" cx="24" cy="64" r="6"/>
+    <text class="credit-name" x="40" y="68">NEGAGZA Nizar</text>
+    <text class="credit-text" x="174" y="68">UI/UX, integration, security hardening, documentation and deployment</text>
   </g>
 
   <!-- Flows -->

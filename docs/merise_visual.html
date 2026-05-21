@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MCD et MLD Merise - IntelliHire</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f2eee9;
+      --panel: #fbfaf8;
+      --text: #1a1531;
+      --muted: #645a70;
+      --border: #b9abc9;
+      --accent: #6d35a4;
+      --deep: #17143a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+      background: linear-gradient(90deg, #17143a, #4b1f7a 58%, #6d35a4);
+      backdrop-filter: blur(10px);
+      color: #fff;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 18px 24px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      margin: 4px 0 0;
+      color: #ded2ee;
+      font-size: 14px;
+    }
+
+    nav {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 8px;
+      color: #fff;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.10);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    nav a:hover {
+      border-color: #fff;
+      background: rgba(255, 255, 255, 0.18);
+      color: #fff;
+    }
+
+    main {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 28px 24px 56px;
+    }
+
+    section {
+      margin: 0 0 32px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 20px;
+    }
+
+    .diagram-frame {
+      overflow: auto;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: 0 16px 36px rgba(33, 21, 55, 0.16);
+    }
+
+    .diagram-frame img {
+      display: block;
+      width: auto;
+      min-width: 100%;
+      max-width: none;
+      height: auto;
+    }
+
+    @media (max-width: 720px) {
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      main {
+        padding-inline: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div>
+        <h1>MCD et MLD Merise - IntelliHire</h1>
+        <p class="subtitle">Visual diagrams generated from the real SmartRecruit database schema.</p>
+      </div>
+      <nav aria-label="Diagram navigation">
+        <a href="#mcd">MCD</a>
+        <a href="#mld">MLD</a>
+        <a href="mcd_merise.svg">Open MCD SVG</a>
+        <a href="mld_merise.svg">Open MLD SVG</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="mcd">
+      <h2>MCD Merise</h2>
+      <div class="diagram-frame">
+        <img src="mcd_merise.svg" alt="MCD Merise visual diagram">
+      </div>
+    </section>
+
+    <section id="mld">
+      <h2>MLD Relationnel</h2>
+      <div class="diagram-frame">
+        <img src="mld_merise.svg" alt="MLD relational visual diagram">
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,27 @@
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Dependency folders, if added later
+vendor/
+node_modules/
+
+# Runtime output
+storage/*
+!storage/.gitkeep
+*.log
+
+# Local uploads / candidate CVs
+public/uploads/*
+!public/uploads/.gitkeep
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Playwright/runtime artifacts
+test-results/
+playwright-report/

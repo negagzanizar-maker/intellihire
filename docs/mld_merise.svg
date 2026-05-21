@@ -1,0 +1,318 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="1320" viewBox="0 0 1700 1320">
+  <defs>
+    <linearGradient id="deepHeader" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#17143a"/>
+      <stop offset="1" stop-color="#2a1a59"/>
+    </linearGradient>
+    <linearGradient id="purpleHeader" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5a1b8f"/>
+      <stop offset="1" stop-color="#7a3bb4"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#332d3d"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#211537" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+
+  <style>
+    .bg { fill: #f2eee9; }
+    .title { font: 800 34px Arial, sans-serif; fill: #1a1531; }
+    .subtitle { font: 500 16px Arial, sans-serif; fill: #645a70; }
+    .table { fill: #fbfaf8; stroke: #2a1a59; stroke-width: 2; rx: 8; filter: url(#shadow); }
+    .head { fill: url(#deepHeader); }
+    .head-text { font: 800 15px Arial, sans-serif; fill: #ffffff; letter-spacing: 0.4px; }
+    .row { fill: #fbfaf8; stroke: #e3dce9; stroke-width: 1; }
+    .row-pk { fill: #efe4f8; stroke: #e3dce9; stroke-width: 1; }
+    .row-fk { fill: #ded2ee; stroke: #e3dce9; stroke-width: 1; }
+    .row-unique { fill: #f4e8cf; stroke: #e3dce9; stroke-width: 1; }
+    .field { font: 13px Consolas, "Courier New", monospace; fill: #241f32; }
+    .field-muted { font: 12px Consolas, "Courier New", monospace; fill: #645a70; }
+    .relation { stroke: #332d3d; stroke-width: 2.2; fill: none; marker-end: url(#arrow); }
+    .relation-soft { stroke: #7d718c; stroke-width: 2; fill: none; marker-end: url(#arrow); stroke-dasharray: 7 5; }
+    .label-bg { fill: #fbfaf8; stroke: #b9abc9; stroke-width: 1; rx: 5; }
+    .label { font: 700 12px Arial, sans-serif; fill: #2a1a59; text-anchor: middle; }
+    .legend { fill: #fbfaf8; stroke: #b9abc9; stroke-width: 1.5; rx: 10; filter: url(#shadow); }
+    .legend-title { font: 800 14px Arial, sans-serif; fill: #1a1531; }
+    .legend-text { font: 13px Arial, sans-serif; fill: #4b4257; }
+  </style>
+
+  <rect class="bg" width="1700" height="1320"/>
+  <text class="title" x="60" y="48">MLD Relationnel - IntelliHire / SmartRecruit</text>
+  <text class="subtitle" x="60" y="76">Relational schema generated from the Merise MCD: PK, FK, UNIQUE constraints and associative tables.</text>
+
+  <!-- Relationship arrows behind tables -->
+  <g>
+    <path class="relation" d="M360 160 L310 160"/>
+    <rect class="label-bg" x="315" y="130" width="88" height="22"/>
+    <text class="label" x="359" y="146">id_role</text>
+
+    <path class="relation" d="M760 170 L700 170"/>
+    <rect class="label-bg" x="710" y="139" width="86" height="22"/>
+    <text class="label" x="753" y="155">id_user</text>
+
+    <path class="relation-soft" d="M760 520 C705 500 685 380 675 350"/>
+    <rect class="label-bg" x="648" y="432" width="110" height="22"/>
+    <text class="label" x="703" y="448">id_recruteur</text>
+
+    <path class="relation" d="M1160 170 L1090 170"/>
+    <rect class="label-bg" x="1104" y="139" width="90" height="22"/>
+    <text class="label" x="1149" y="155">id_profil</text>
+
+    <path class="relation" d="M1160 275 C1100 330 1085 380 1085 420"/>
+    <rect class="label-bg" x="1075" y="338" width="82" height="22"/>
+    <text class="label" x="1116" y="354">id_offre</text>
+
+    <path class="relation" d="M1365 650 L1365 570"/>
+    <rect class="label-bg" x="1378" y="600" width="112" height="22"/>
+    <text class="label" x="1434" y="616">id_competence</text>
+
+    <path class="relation" d="M1240 710 C1185 695 1148 650 1125 610"/>
+    <rect class="label-bg" x="1160" y="656" width="82" height="22"/>
+    <text class="label" x="1201" y="672">id_offre</text>
+
+    <path class="relation" d="M1120 795 C1240 785 1305 650 1365 570"/>
+    <rect class="label-bg" x="1195" y="764" width="112" height="22"/>
+    <text class="label" x="1251" y="780">id_competence</text>
+
+    <path class="relation" d="M935 730 L935 310"/>
+    <rect class="label-bg" x="948" y="505" width="90" height="22"/>
+    <text class="label" x="993" y="521">id_profil</text>
+
+    <path class="relation" d="M930 900 C1000 735 1135 535 1160 330"/>
+    <rect class="label-bg" x="990" y="794" width="120" height="22"/>
+    <text class="label" x="1050" y="810">id_candidature</text>
+
+    <path class="relation-soft" d="M430 990 C340 900 315 600 360 345"/>
+    <rect class="label-bg" x="315" y="722" width="86" height="22"/>
+    <text class="label" x="358" y="738">id_user</text>
+
+    <path class="relation" d="M1125 900 C1125 770 1240 505 1160 330"/>
+    <rect class="label-bg" x="1135" y="820" width="120" height="22"/>
+    <text class="label" x="1195" y="836">id_candidature</text>
+
+    <path class="relation" d="M300 500 C320 430 330 365 360 300"/>
+    <rect class="label-bg" x="238" y="410" width="86" height="22"/>
+    <text class="label" x="281" y="426">id_user</text>
+  </g>
+
+  <!-- ROLE -->
+  <g>
+    <rect class="table" x="60" y="100" width="250" height="120"/>
+    <rect class="head" x="60" y="100" width="250" height="34"/>
+    <text class="head-text" x="75" y="122">ROLE</text>
+    <rect class="row-pk" x="60" y="134" width="250" height="24"/>
+    <text class="field" x="75" y="151">PK id_role</text>
+    <rect class="row-unique" x="60" y="158" width="250" height="24"/>
+    <text class="field" x="75" y="175">UQ nom_role</text>
+    <rect class="row" x="60" y="182" width="250" height="38"/>
+    <text class="field-muted" x="75" y="205">RECRUTEUR / CANDIDAT</text>
+  </g>
+
+  <!-- UTILISATEUR -->
+  <g>
+    <rect class="table" x="360" y="80" width="340" height="270"/>
+    <rect class="head" x="360" y="80" width="340" height="34"/>
+    <text class="head-text" x="375" y="102">UTILISATEUR</text>
+    <rect class="row-pk" x="360" y="114" width="340" height="24"/>
+    <text class="field" x="375" y="131">PK id_user</text>
+    <rect class="row" x="360" y="138" width="340" height="24"/>
+    <text class="field" x="375" y="155">nom</text>
+    <rect class="row" x="360" y="162" width="340" height="24"/>
+    <text class="field" x="375" y="179">prenom</text>
+    <rect class="row-unique" x="360" y="186" width="340" height="24"/>
+    <text class="field" x="375" y="203">UQ email</text>
+    <rect class="row" x="360" y="210" width="340" height="24"/>
+    <text class="field" x="375" y="227">mot_de_passe</text>
+    <rect class="row-fk" x="360" y="234" width="340" height="24"/>
+    <text class="field" x="375" y="251">FK id_role -> ROLE.id_role</text>
+    <rect class="row" x="360" y="258" width="340" height="24"/>
+    <text class="field" x="375" y="275">actif</text>
+    <rect class="row" x="360" y="282" width="340" height="24"/>
+    <text class="field" x="375" y="299">created_at</text>
+    <rect class="row" x="360" y="306" width="340" height="44"/>
+    <text class="field" x="375" y="323">updated_at</text>
+  </g>
+
+  <!-- PROFIL_CANDIDAT -->
+  <g>
+    <rect class="table" x="760" y="80" width="330" height="230"/>
+    <rect class="head" x="760" y="80" width="330" height="34"/>
+    <text class="head-text" x="775" y="102">PROFIL_CANDIDAT</text>
+    <rect class="row-pk" x="760" y="114" width="330" height="24"/>
+    <text class="field" x="775" y="131">PK id_profil</text>
+    <rect class="row-fk" x="760" y="138" width="330" height="24"/>
+    <text class="field" x="775" y="155">FK UQ id_user -> UTILISATEUR</text>
+    <rect class="row" x="760" y="162" width="330" height="24"/>
+    <text class="field" x="775" y="179">cv_path</text>
+    <rect class="row" x="760" y="186" width="330" height="24"/>
+    <text class="field" x="775" y="203">experience</text>
+    <rect class="row" x="760" y="210" width="330" height="24"/>
+    <text class="field" x="775" y="227">created_at</text>
+    <rect class="row" x="760" y="234" width="330" height="76"/>
+    <text class="field" x="775" y="251">updated_at</text>
+  </g>
+
+  <!-- CANDIDATURE -->
+  <g>
+    <rect class="table" x="1160" y="80" width="380" height="270"/>
+    <rect class="head" x="1160" y="80" width="380" height="34"/>
+    <text class="head-text" x="1175" y="102">CANDIDATURE</text>
+    <rect class="row-pk" x="1160" y="114" width="380" height="24"/>
+    <text class="field" x="1175" y="131">PK id_candidature</text>
+    <rect class="row-fk" x="1160" y="138" width="380" height="24"/>
+    <text class="field" x="1175" y="155">FK id_offre -> OFFRE_EMPLOI</text>
+    <rect class="row-fk" x="1160" y="162" width="380" height="24"/>
+    <text class="field" x="1175" y="179">FK id_profil -> PROFIL_CANDIDAT</text>
+    <rect class="row" x="1160" y="186" width="380" height="24"/>
+    <text class="field" x="1175" y="203">lettre_motiv</text>
+    <rect class="row" x="1160" y="210" width="380" height="24"/>
+    <text class="field" x="1175" y="227">score_matching</text>
+    <rect class="row" x="1160" y="234" width="380" height="24"/>
+    <text class="field" x="1175" y="251">statut</text>
+    <rect class="row" x="1160" y="258" width="380" height="24"/>
+    <text class="field" x="1175" y="275">created_at, updated_at</text>
+    <rect class="row-unique" x="1160" y="282" width="380" height="68"/>
+    <text class="field" x="1175" y="300">UQ(id_offre, id_profil)</text>
+  </g>
+
+  <!-- OFFRE_EMPLOI -->
+  <g>
+    <rect class="table" x="760" y="420" width="380" height="270"/>
+    <rect class="head" x="760" y="420" width="380" height="34"/>
+    <text class="head-text" x="775" y="442">OFFRE_EMPLOI</text>
+    <rect class="row-pk" x="760" y="454" width="380" height="24"/>
+    <text class="field" x="775" y="471">PK id_offre</text>
+    <rect class="row" x="760" y="478" width="380" height="24"/>
+    <text class="field" x="775" y="495">titre</text>
+    <rect class="row" x="760" y="502" width="380" height="24"/>
+    <text class="field" x="775" y="519">description</text>
+    <rect class="row" x="760" y="526" width="380" height="24"/>
+    <text class="field" x="775" y="543">type_contrat</text>
+    <rect class="row" x="760" y="550" width="380" height="24"/>
+    <text class="field" x="775" y="567">localisation</text>
+    <rect class="row" x="760" y="574" width="380" height="24"/>
+    <text class="field" x="775" y="591">statut</text>
+    <rect class="row-fk" x="760" y="598" width="380" height="24"/>
+    <text class="field" x="775" y="615">FK id_recruteur -> UTILISATEUR</text>
+    <rect class="row" x="760" y="622" width="380" height="68"/>
+    <text class="field" x="775" y="639">created_at, updated_at</text>
+  </g>
+
+  <!-- COMPETENCE -->
+  <g>
+    <rect class="table" x="1240" y="430" width="330" height="140"/>
+    <rect class="head" x="1240" y="430" width="330" height="34"/>
+    <text class="head-text" x="1255" y="452">COMPETENCE</text>
+    <rect class="row-pk" x="1240" y="464" width="330" height="24"/>
+    <text class="field" x="1255" y="481">PK id_competence</text>
+    <rect class="row-unique" x="1240" y="488" width="330" height="24"/>
+    <text class="field" x="1255" y="505">UQ nom</text>
+    <rect class="row" x="1240" y="512" width="330" height="58"/>
+    <text class="field" x="1255" y="529">created_at</text>
+  </g>
+
+  <!-- COMPETENCE_OFFRE -->
+  <g>
+    <rect class="table" x="1240" y="650" width="330" height="130"/>
+    <rect class="head" x="1240" y="650" width="330" height="34"/>
+    <text class="head-text" x="1255" y="672">COMPETENCE_OFFRE</text>
+    <rect class="row-pk" x="1240" y="684" width="330" height="24"/>
+    <text class="field" x="1255" y="701">PK/FK id_offre</text>
+    <rect class="row-pk" x="1240" y="708" width="330" height="24"/>
+    <text class="field" x="1255" y="725">PK/FK id_competence</text>
+    <rect class="row" x="1240" y="732" width="330" height="48"/>
+    <text class="field-muted" x="1255" y="755">Association EXIGER</text>
+  </g>
+
+  <!-- COMPETENCE_CANDIDAT -->
+  <g>
+    <rect class="table" x="760" y="730" width="360" height="130"/>
+    <rect class="head" x="760" y="730" width="360" height="34"/>
+    <text class="head-text" x="775" y="752">COMPETENCE_CANDIDAT</text>
+    <rect class="row-pk" x="760" y="764" width="360" height="24"/>
+    <text class="field" x="775" y="781">PK/FK id_profil</text>
+    <rect class="row-pk" x="760" y="788" width="360" height="24"/>
+    <text class="field" x="775" y="805">PK/FK id_competence</text>
+    <rect class="row" x="760" y="812" width="360" height="48"/>
+    <text class="field-muted" x="775" y="835">Association MAITRISER</text>
+  </g>
+
+  <!-- NOTIFICATION -->
+  <g>
+    <rect class="table" x="60" y="500" width="300" height="170"/>
+    <rect class="head" x="60" y="500" width="300" height="34"/>
+    <text class="head-text" x="75" y="522">NOTIFICATION</text>
+    <rect class="row-pk" x="60" y="534" width="300" height="24"/>
+    <text class="field" x="75" y="551">PK id_notif</text>
+    <rect class="row-fk" x="60" y="558" width="300" height="24"/>
+    <text class="field" x="75" y="575">FK id_user -> UTILISATEUR</text>
+    <rect class="row" x="60" y="582" width="300" height="24"/>
+    <text class="field" x="75" y="599">message</text>
+    <rect class="row" x="60" y="606" width="300" height="24"/>
+    <text class="field" x="75" y="623">lien, lu</text>
+    <rect class="row" x="60" y="630" width="300" height="40"/>
+    <text class="field" x="75" y="647">created_at</text>
+  </g>
+
+  <!-- CANDIDATURE_HISTORIQUE -->
+  <g>
+    <rect class="table" x="430" y="900" width="420" height="230"/>
+    <rect class="head" x="430" y="900" width="420" height="34"/>
+    <text class="head-text" x="445" y="922">CANDIDATURE_HISTORIQUE</text>
+    <rect class="row-pk" x="430" y="934" width="420" height="24"/>
+    <text class="field" x="445" y="951">PK id_historique</text>
+    <rect class="row-fk" x="430" y="958" width="420" height="24"/>
+    <text class="field" x="445" y="975">FK id_candidature -> CANDIDATURE</text>
+    <rect class="row" x="430" y="982" width="420" height="24"/>
+    <text class="field" x="445" y="999">ancien_statut</text>
+    <rect class="row" x="430" y="1006" width="420" height="24"/>
+    <text class="field" x="445" y="1023">nouveau_statut</text>
+    <rect class="row" x="430" y="1030" width="420" height="24"/>
+    <text class="field" x="445" y="1047">note</text>
+    <rect class="row-fk" x="430" y="1054" width="420" height="24"/>
+    <text class="field" x="445" y="1071">FK id_user -> UTILISATEUR</text>
+    <rect class="row" x="430" y="1078" width="420" height="52"/>
+    <text class="field" x="445" y="1095">created_at</text>
+  </g>
+
+  <!-- ENTRETIEN -->
+  <g>
+    <rect class="table" x="930" y="900" width="390" height="240"/>
+    <rect class="head" x="930" y="900" width="390" height="34"/>
+    <text class="head-text" x="945" y="922">ENTRETIEN</text>
+    <rect class="row-pk" x="930" y="934" width="390" height="24"/>
+    <text class="field" x="945" y="951">PK id_entretien</text>
+    <rect class="row-fk" x="930" y="958" width="390" height="24"/>
+    <text class="field" x="945" y="975">FK UQ id_candidature -> CANDIDATURE</text>
+    <rect class="row" x="930" y="982" width="390" height="24"/>
+    <text class="field" x="945" y="999">date_entretien</text>
+    <rect class="row" x="930" y="1006" width="390" height="24"/>
+    <text class="field" x="945" y="1023">type_entretien</text>
+    <rect class="row" x="930" y="1030" width="390" height="24"/>
+    <text class="field" x="945" y="1047">lieu_ou_lien</text>
+    <rect class="row" x="930" y="1054" width="390" height="24"/>
+    <text class="field" x="945" y="1071">decision</text>
+    <rect class="row" x="930" y="1078" width="390" height="24"/>
+    <text class="field" x="945" y="1095">compte_rendu</text>
+    <rect class="row" x="930" y="1102" width="390" height="38"/>
+    <text class="field" x="945" y="1119">created_at, updated_at</text>
+  </g>
+
+  <!-- Legend -->
+  <g>
+    <rect class="legend" x="60" y="1190" width="1140" height="82"/>
+    <text class="legend-title" x="80" y="1218">Legend</text>
+    <rect class="row-pk" x="80" y="1234" width="28" height="18"/>
+    <text class="legend-text" x="118" y="1248">Primary key</text>
+    <rect class="row-fk" x="230" y="1234" width="28" height="18"/>
+    <text class="legend-text" x="268" y="1248">Foreign key</text>
+    <rect class="row-unique" x="390" y="1234" width="28" height="18"/>
+    <text class="legend-text" x="428" y="1248">Unique constraint</text>
+    <path class="relation" d="M590 1243 L665 1243"/>
+    <text class="legend-text" x="685" y="1248">FK points to referenced PK</text>
+    <path class="relation-soft" d="M890 1243 L965 1243"/>
+    <text class="legend-text" x="985" y="1248">Nullable FK in physical schema</text>
+  </g>
+</svg>

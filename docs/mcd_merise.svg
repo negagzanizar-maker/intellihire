@@ -1,0 +1,288 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2350" height="1500" viewBox="0 0 2350 1500">
+  <defs>
+    <linearGradient id="purpleHeader" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5a1b8f"/>
+      <stop offset="1" stop-color="#7a3bb4"/>
+    </linearGradient>
+    <linearGradient id="assocPurple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ede4f6"/>
+      <stop offset="1" stop-color="#d6bee9"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#211537" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+
+  <style>
+    .bg { fill: #f2eee9; }
+    .title { font: 800 34px Arial, sans-serif; fill: #1a1531; }
+    .entity-box { fill: #fbfaf8; stroke: #6d35a4; stroke-width: 2; rx: 10; filter: url(#shadow); }
+    .entity-head { fill: url(#purpleHeader); }
+    .entity-title { font: 800 16px Arial, sans-serif; fill: #ffffff; letter-spacing: 0.5px; }
+    .attr { font: 14px Consolas, "Courier New", monospace; fill: #241f32; }
+    .assoc { fill: url(#assocPurple); stroke: #7a3bb4; stroke-width: 2; filter: url(#shadow); }
+    .assoc-text { font: 800 13px Arial, sans-serif; fill: #3e1768; text-anchor: middle; }
+    .link { stroke: #332d3d; stroke-width: 2.2; fill: none; }
+    .cardinality-bg { fill: #fbfaf8; stroke: #6d35a4; stroke-width: 1.5; rx: 7; filter: url(#shadow); }
+    .cardinality { font: 900 15px Arial, sans-serif; fill: #4d1978; text-anchor: middle; }
+    .note-box { fill: #fbfaf8; stroke: #7a3bb4; stroke-width: 1.5; rx: 10; }
+    .note-title { font: 800 14px Arial, sans-serif; fill: #3e1768; }
+    .note-text { font: 13px Arial, sans-serif; fill: #4b4257; }
+  </style>
+
+  <rect class="bg" x="0" y="0" width="2350" height="1500"/>
+  <text class="title" x="70" y="54">MCD Merise - IntelliHire / SmartRecruit</text>
+
+  <!-- Relationship lines -->
+  <g>
+    <!-- AFFECTER_ROLE -->
+    <line class="link" x1="330" y1="180" x2="400" y2="180"/>
+    <line class="link" x1="580" y1="180" x2="650" y2="180"/>
+
+    <!-- PUBLIER -->
+    <line class="link" x1="990" y1="180" x2="1085" y2="180"/>
+    <line class="link" x1="1225" y1="180" x2="1320" y2="180"/>
+
+    <!-- EXIGER -->
+    <line class="link" x1="1700" y1="180" x2="1790" y2="180"/>
+    <line class="link" x1="1930" y1="180" x2="2020" y2="180"/>
+
+    <!-- POSSEDER_PROFIL -->
+    <path class="link" d="M820 310 L820 424"/>
+    <path class="link" d="M820 506 L820 620"/>
+
+    <!-- RECEVOIR_NOTIFICATION -->
+    <path class="link" d="M650 300 C565 365 515 425 490 485"/>
+    <path class="link" d="M400 535 C330 575 285 600 245 620"/>
+
+    <!-- MAITRISER -->
+    <path class="link" d="M1000 650 C1220 560 1520 515 1765 500"/>
+    <path class="link" d="M1955 492 C1980 430 1995 310 2020 220"/>
+
+    <!-- DEPOSER -->
+    <line class="link" x1="1000" y1="710" x2="1090" y2="710"/>
+    <line class="link" x1="1230" y1="710" x2="1320" y2="710"/>
+
+    <!-- CONCERNER_OFFRE -->
+    <path class="link" d="M1510 320 L1510 424"/>
+    <path class="link" d="M1510 506 L1510 620"/>
+
+    <!-- TRACER_STATUT -->
+    <path class="link" d="M1350 830 C1280 895 1230 945 1190 990"/>
+    <path class="link" d="M1095 1034 C1015 1070 950 1095 900 1120"/>
+
+    <!-- EFFECTUER_CHANGEMENT -->
+    <path class="link" d="M700 310 C650 560 630 775 645 940"/>
+    <path class="link" d="M700 1018 C735 1065 770 1090 820 1120"/>
+
+    <!-- PLANIFIER -->
+    <path class="link" d="M1530 830 C1545 875 1550 920 1550 950"/>
+    <path class="link" d="M1575 1028 C1600 1060 1630 1085 1665 1110"/>
+  </g>
+
+  <!-- Association nodes -->
+  <g>
+    <ellipse class="assoc" cx="490" cy="180" rx="90" ry="38"/>
+    <text class="assoc-text" x="490" y="176">AFFECTER</text>
+    <text class="assoc-text" x="490" y="193">ROLE</text>
+
+    <ellipse class="assoc" cx="1155" cy="180" rx="70" ry="36"/>
+    <text class="assoc-text" x="1155" y="185">PUBLIER</text>
+
+    <ellipse class="assoc" cx="1860" cy="180" rx="70" ry="36"/>
+    <text class="assoc-text" x="1860" y="185">EXIGER</text>
+
+    <ellipse class="assoc" cx="820" cy="465" rx="104" ry="41"/>
+    <text class="assoc-text" x="820" y="461">POSSEDER</text>
+    <text class="assoc-text" x="820" y="478">PROFIL</text>
+
+    <ellipse class="assoc" cx="445" cy="510" rx="92" ry="39"/>
+    <text class="assoc-text" x="445" y="506">RECEVOIR</text>
+    <text class="assoc-text" x="445" y="523">NOTIF</text>
+
+    <ellipse class="assoc" cx="1860" cy="500" rx="95" ry="39"/>
+    <text class="assoc-text" x="1860" y="505">MAITRISER</text>
+
+    <ellipse class="assoc" cx="1160" cy="710" rx="70" ry="36"/>
+    <text class="assoc-text" x="1160" y="715">DEPOSER</text>
+
+    <ellipse class="assoc" cx="1510" cy="465" rx="112" ry="41"/>
+    <text class="assoc-text" x="1510" y="461">CONCERNER</text>
+    <text class="assoc-text" x="1510" y="478">OFFRE</text>
+
+    <ellipse class="assoc" cx="1115" cy="1010" rx="95" ry="39"/>
+    <text class="assoc-text" x="1115" y="1006">TRACER</text>
+    <text class="assoc-text" x="1115" y="1023">STATUT</text>
+
+    <ellipse class="assoc" cx="675" cy="980" rx="106" ry="39"/>
+    <text class="assoc-text" x="675" y="976">EFFECTUER</text>
+    <text class="assoc-text" x="675" y="993">CHANGEMENT</text>
+
+    <ellipse class="assoc" cx="1550" cy="990" rx="88" ry="39"/>
+    <text class="assoc-text" x="1550" y="995">PLANIFIER</text>
+  </g>
+
+  <!-- Entities -->
+  <g>
+    <rect class="entity-box" x="70" y="115" width="260" height="125"/>
+    <rect class="entity-head" x="70" y="115" width="260" height="36"/>
+    <text class="entity-title" x="86" y="139">ROLE</text>
+    <text class="attr" x="90" y="176"># id_role</text>
+    <text class="attr" x="90" y="202">nom_role [U]</text>
+
+    <rect class="entity-box" x="650" y="80" width="340" height="230"/>
+    <rect class="entity-head" x="650" y="80" width="340" height="36"/>
+    <text class="entity-title" x="666" y="104">UTILISATEUR</text>
+    <text class="attr" x="670" y="142"># id_user</text>
+    <text class="attr" x="670" y="168">nom</text>
+    <text class="attr" x="670" y="194">prenom</text>
+    <text class="attr" x="670" y="220">email [U]</text>
+    <text class="attr" x="670" y="246">mot_de_passe</text>
+    <text class="attr" x="670" y="272">actif</text>
+    <text class="attr" x="670" y="298">created_at, updated_at</text>
+
+    <rect class="entity-box" x="1320" y="80" width="380" height="240"/>
+    <rect class="entity-head" x="1320" y="80" width="380" height="36"/>
+    <text class="entity-title" x="1336" y="104">OFFRE_EMPLOI</text>
+    <text class="attr" x="1340" y="142"># id_offre</text>
+    <text class="attr" x="1340" y="168">titre</text>
+    <text class="attr" x="1340" y="194">description</text>
+    <text class="attr" x="1340" y="220">type_contrat</text>
+    <text class="attr" x="1340" y="246">localisation</text>
+    <text class="attr" x="1340" y="272">statut</text>
+    <text class="attr" x="1340" y="298">created_at, updated_at</text>
+
+    <rect class="entity-box" x="2020" y="115" width="260" height="135"/>
+    <rect class="entity-head" x="2020" y="115" width="260" height="36"/>
+    <text class="entity-title" x="2036" y="139">COMPETENCE</text>
+    <text class="attr" x="2040" y="176"># id_competence</text>
+    <text class="attr" x="2040" y="202">nom [U]</text>
+    <text class="attr" x="2040" y="228">created_at</text>
+
+    <rect class="entity-box" x="70" y="620" width="330" height="175"/>
+    <rect class="entity-head" x="70" y="620" width="330" height="36"/>
+    <text class="entity-title" x="86" y="644">NOTIFICATION</text>
+    <text class="attr" x="90" y="682"># id_notif</text>
+    <text class="attr" x="90" y="708">message</text>
+    <text class="attr" x="90" y="734">lien</text>
+    <text class="attr" x="90" y="760">lu</text>
+    <text class="attr" x="90" y="786">created_at</text>
+
+    <rect class="entity-box" x="650" y="620" width="350" height="180"/>
+    <rect class="entity-head" x="650" y="620" width="350" height="36"/>
+    <text class="entity-title" x="666" y="644">PROFIL_CANDIDAT</text>
+    <text class="attr" x="670" y="682"># id_profil</text>
+    <text class="attr" x="670" y="708">cv_path</text>
+    <text class="attr" x="670" y="734">experience</text>
+    <text class="attr" x="670" y="760">created_at</text>
+    <text class="attr" x="670" y="786">updated_at</text>
+
+    <rect class="entity-box" x="1320" y="620" width="390" height="210"/>
+    <rect class="entity-head" x="1320" y="620" width="390" height="36"/>
+    <text class="entity-title" x="1336" y="644">CANDIDATURE</text>
+    <text class="attr" x="1340" y="682"># id_candidature</text>
+    <text class="attr" x="1340" y="708">lettre_motiv</text>
+    <text class="attr" x="1340" y="734">score_matching</text>
+    <text class="attr" x="1340" y="760">statut</text>
+    <text class="attr" x="1340" y="786">created_at</text>
+    <text class="attr" x="1340" y="812">updated_at</text>
+
+    <rect class="entity-box" x="760" y="1120" width="430" height="175"/>
+    <rect class="entity-head" x="760" y="1120" width="430" height="36"/>
+    <text class="entity-title" x="776" y="1144">CANDIDATURE_HISTORIQUE</text>
+    <text class="attr" x="780" y="1182"># id_historique</text>
+    <text class="attr" x="780" y="1208">ancien_statut</text>
+    <text class="attr" x="780" y="1234">nouveau_statut</text>
+    <text class="attr" x="780" y="1260">note</text>
+    <text class="attr" x="780" y="1286">created_at</text>
+
+    <rect class="entity-box" x="1420" y="1110" width="390" height="230"/>
+    <rect class="entity-head" x="1420" y="1110" width="390" height="36"/>
+    <text class="entity-title" x="1436" y="1134">ENTRETIEN</text>
+    <text class="attr" x="1440" y="1172"># id_entretien</text>
+    <text class="attr" x="1440" y="1198">date_entretien</text>
+    <text class="attr" x="1440" y="1224">type_entretien</text>
+    <text class="attr" x="1440" y="1250">lieu_ou_lien</text>
+    <text class="attr" x="1440" y="1276">decision</text>
+    <text class="attr" x="1440" y="1302">compte_rendu</text>
+    <text class="attr" x="1440" y="1328">created_at, updated_at</text>
+  </g>
+
+  <!-- Cardinalities -->
+  <g>
+    <!-- AFFECTER_ROLE -->
+    <rect class="cardinality-bg" x="342" y="205" width="66" height="30"/>
+    <text class="cardinality" x="375" y="226">0,N</text>
+    <rect class="cardinality-bg" x="572" y="205" width="66" height="30"/>
+    <text class="cardinality" x="605" y="226">1,1</text>
+
+    <!-- PUBLIER -->
+    <rect class="cardinality-bg" x="1008" y="205" width="66" height="30"/>
+    <text class="cardinality" x="1041" y="226">0,N</text>
+    <rect class="cardinality-bg" x="1236" y="205" width="66" height="30"/>
+    <text class="cardinality" x="1269" y="226">1,1</text>
+
+    <!-- EXIGER -->
+    <rect class="cardinality-bg" x="1722" y="205" width="66" height="30"/>
+    <text class="cardinality" x="1755" y="226">0,N</text>
+    <rect class="cardinality-bg" x="1932" y="205" width="66" height="30"/>
+    <text class="cardinality" x="1965" y="226">0,N</text>
+
+    <!-- POSSEDER_PROFIL -->
+    <rect class="cardinality-bg" x="842" y="350" width="66" height="30"/>
+    <text class="cardinality" x="875" y="371">0,1</text>
+    <rect class="cardinality-bg" x="842" y="557" width="66" height="30"/>
+    <text class="cardinality" x="875" y="578">1,1</text>
+
+    <!-- RECEVOIR_NOTIFICATION -->
+    <rect class="cardinality-bg" x="535" y="360" width="66" height="30"/>
+    <text class="cardinality" x="568" y="381">0,N</text>
+    <rect class="cardinality-bg" x="318" y="570" width="66" height="30"/>
+    <text class="cardinality" x="351" y="591">1,1</text>
+
+    <!-- MAITRISER -->
+    <rect class="cardinality-bg" x="1038" y="600" width="66" height="30"/>
+    <text class="cardinality" x="1071" y="621">0,N</text>
+    <rect class="cardinality-bg" x="1958" y="300" width="66" height="30"/>
+    <text class="cardinality" x="1991" y="321">0,N</text>
+
+    <!-- DEPOSER -->
+    <rect class="cardinality-bg" x="1020" y="734" width="66" height="30"/>
+    <text class="cardinality" x="1053" y="755">0,N</text>
+    <rect class="cardinality-bg" x="1234" y="734" width="66" height="30"/>
+    <text class="cardinality" x="1267" y="755">1,1</text>
+
+    <!-- CONCERNER_OFFRE -->
+    <rect class="cardinality-bg" x="1536" y="350" width="66" height="30"/>
+    <text class="cardinality" x="1569" y="371">0,N</text>
+    <rect class="cardinality-bg" x="1536" y="557" width="66" height="30"/>
+    <text class="cardinality" x="1569" y="578">1,1</text>
+
+    <!-- TRACER_STATUT -->
+    <rect class="cardinality-bg" x="1275" y="892" width="66" height="30"/>
+    <text class="cardinality" x="1308" y="913">0,N</text>
+    <rect class="cardinality-bg" x="960" y="1065" width="66" height="30"/>
+    <text class="cardinality" x="993" y="1086">1,1</text>
+
+    <!-- EFFECTUER_CHANGEMENT -->
+    <rect class="cardinality-bg" x="632" y="350" width="66" height="30"/>
+    <text class="cardinality" x="665" y="371">0,N</text>
+    <rect class="cardinality-bg" x="728" y="1065" width="66" height="30"/>
+    <text class="cardinality" x="761" y="1086">0,1</text>
+
+    <!-- PLANIFIER -->
+    <rect class="cardinality-bg" x="1568" y="892" width="66" height="30"/>
+    <text class="cardinality" x="1601" y="913">0,1</text>
+    <rect class="cardinality-bg" x="1615" y="1065" width="66" height="30"/>
+    <text class="cardinality" x="1648" y="1086">1,1</text>
+  </g>
+
+  <!-- Legend -->
+  <g>
+    <rect class="note-box" x="70" y="1240" width="475" height="120"/>
+    <text class="note-title" x="92" y="1270">Legend</text>
+    <text class="note-text" x="92" y="1295">Purple rectangle = entity. Lavender oval = association.</text>
+    <text class="note-text" x="92" y="1318">Cardinality format is Merise: minimum,maximum.</text>
+    <text class="note-text" x="92" y="1341">[U] means unique business constraint.</text>
+  </g>
+</svg>

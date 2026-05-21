@@ -1,319 +1,302 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
-  <title id="title">IntelliHire Application and Security Overview</title>
-  <desc id="desc">Architecture overview diagram for the IntelliHire PHP MVC recruitment application, showing users, public entry point, controllers, services, database, external dependencies, security controls, and risk surfaces.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="720" viewBox="0 0 1100 720" role="img" aria-labelledby="title desc">
+  <title id="title">IntelliHire Application Overview</title>
+  <desc id="desc">Reference-style architecture and security overview for the IntelliHire PHP MVC recruitment app, with subtle contribution attribution.</desc>
   <defs>
     <style>
-      .bg { fill: #fbfaf7; }
-      .title { font: 800 38px Arial, sans-serif; fill: #122034; }
-      .subtitle { font: 600 15px Arial, sans-serif; fill: #536174; }
-      .zone { fill: #ffffff; stroke: #65a9c6; stroke-width: 2.2; rx: 12; }
-      .zone-title { font: 700 18px Arial, sans-serif; fill: #20749a; }
-      .box { fill: #f9fcff; stroke: #9fc9dd; stroke-width: 1.7; rx: 9; }
-      .box-strong { fill: #eef8fc; stroke: #3a9abd; stroke-width: 2; rx: 9; }
-      .box-db { fill: #f5fbf4; stroke: #72b97a; stroke-width: 2; rx: 9; }
-      .box-ext { fill: #fffaf0; stroke: #d8b65b; stroke-width: 1.8; rx: 9; }
-      .risk { fill: #ffb8c2; stroke: #f06f86; stroke-width: 1.4; rx: 9; }
-      .risk-title { font: 800 13px Arial, sans-serif; fill: #66202a; }
-      .risk-text { font: 600 12px Arial, sans-serif; fill: #66202a; }
-      .small { font: 600 12px Arial, sans-serif; fill: #465568; }
-      .tiny { font: 600 10.5px Arial, sans-serif; fill: #5b6878; }
-      .label { font: 700 14px Arial, sans-serif; fill: #183047; }
-      .muted { font: 600 12px Arial, sans-serif; fill: #6f7b8c; }
-      .pill { fill: #e9f4f9; stroke: #8ebed3; stroke-width: 1; rx: 12; }
-      .pill-text { font: 700 11px Arial, sans-serif; fill: #2c6d86; }
-      .flow { stroke: #2e455d; stroke-width: 2; fill: none; marker-end: url(#arrow); }
-      .flow-soft { stroke: #6a7c91; stroke-width: 1.8; fill: none; marker-end: url(#arrowSoft); }
-      .flow-risk { stroke: #e45c76; stroke-width: 2.1; fill: none; marker-end: url(#arrowRisk); }
-      .flow-dash { stroke: #6a7c91; stroke-width: 1.7; stroke-dasharray: 7 6; fill: none; marker-end: url(#arrowSoft); }
-      .flow-ext { stroke: #c99a2c; stroke-width: 1.8; stroke-dasharray: 6 5; fill: none; marker-end: url(#arrowExt); }
-      .icon-line { stroke: #20364d; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-      .icon-fill { fill: #20364d; }
-      .key-line { stroke-width: 2; fill: none; }
-      .credit { fill: #ffffff; stroke: #d3dde8; stroke-width: 1.5; rx: 10; }
-      .credit-title { font: 800 13px Arial, sans-serif; fill: #20364d; }
-      .credit-name { font: 800 12px Arial, sans-serif; fill: #20364d; }
-      .credit-text { font: 600 11px Arial, sans-serif; fill: #5b6878; }
-      .credit-dina { fill: #dff3fb; stroke: #65a9c6; stroke-width: 1; }
-      .credit-nizar { fill: #eee8fb; stroke: #8b6cc2; stroke-width: 1; }
+      .page { fill: #fbfaf7; }
+      .title { font: 800 31px Arial, sans-serif; fill: #132033; }
+      .sub { font: 600 13px Arial, sans-serif; fill: #5b6777; }
+      .zone { fill: #fffefd; stroke: #76b8d7; stroke-width: 2; rx: 8; }
+      .zone-label { font: 700 16px Arial, sans-serif; fill: #1f80aa; }
+      .panel { fill: #f8fbfd; stroke: #72afd0; stroke-width: 1.5; rx: 7; }
+      .panel-strong { fill: #ffffff; stroke: #2f94bd; stroke-width: 1.8; rx: 7; }
+      .data { fill: #f7fff8; stroke: #62b779; stroke-width: 1.8; rx: 7; }
+      .ext { fill: #fffaf0; stroke: #e0aa36; stroke-width: 1.5; rx: 7; }
+      .risk { fill: #ffb4c0; stroke: #f06a81; stroke-width: 1.3; rx: 7; }
+      .safe { fill: #eaf8ff; stroke: #5bb0cf; stroke-width: 1.5; rx: 7; }
+      .text { font: 600 12px Arial, sans-serif; fill: #26384c; }
+      .small { font: 600 10.5px Arial, sans-serif; fill: #4f5d6c; }
+      .tiny { font: 600 9.5px Arial, sans-serif; fill: #5f6b78; }
+      .bold { font: 800 12px Arial, sans-serif; fill: #17283b; }
+      .risk-title { font: 800 11.5px Arial, sans-serif; fill: #6b2330; }
+      .risk-text { font: 600 10.5px Arial, sans-serif; fill: #6b2330; }
+      .line { stroke: #26384c; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+      .dash { stroke: #708093; stroke-width: 1.7; stroke-dasharray: 6 6; fill: none; marker-end: url(#arrow2); }
+      .risk-line { stroke: #ef5b78; stroke-width: 2; fill: none; marker-end: url(#arrowRisk); }
+      .ext-line { stroke: #d39a25; stroke-width: 1.7; stroke-dasharray: 5 5; fill: none; marker-end: url(#arrowExt); }
+      .icon { stroke: #1d3045; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .chip { fill: #e9f6fb; stroke: #81bbd4; stroke-width: 1; rx: 12; }
+      .chip-text { font: 700 9.5px Arial, sans-serif; fill: #236f8e; }
+      .credit { fill: #ffffff; stroke: #cfdce8; stroke-width: 1.2; rx: 7; }
+      .dot-dina { fill: #dff4fb; stroke: #5aaacc; stroke-width: 1; }
+      .dot-nizar { fill: #efe8fb; stroke: #8d73c9; stroke-width: 1; }
+      .credit-name { font: 800 10.5px Arial, sans-serif; fill: #203047; }
+      .credit-text { font: 600 10px Arial, sans-serif; fill: #526170; }
+      .shadow { filter: url(#shadow); }
     </style>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L9,3 L0,6 Z" fill="#2e455d"/>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8 Z" fill="#26384c"/>
     </marker>
-    <marker id="arrowSoft" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L9,3 L0,6 Z" fill="#6a7c91"/>
+    <marker id="arrow2" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8 Z" fill="#708093"/>
     </marker>
-    <marker id="arrowRisk" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L9,3 L0,6 Z" fill="#e45c76"/>
+    <marker id="arrowRisk" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8 Z" fill="#ef5b78"/>
     </marker>
-    <marker id="arrowExt" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L9,3 L0,6 Z" fill="#c99a2c"/>
+    <marker id="arrowExt" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8 Z" fill="#d39a25"/>
     </marker>
-    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#183047" flood-opacity="0.10"/>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#1b3148" flood-opacity=".10"/>
     </filter>
   </defs>
 
-  <rect class="bg" width="1400" height="900"/>
+  <rect class="page" width="1100" height="720"/>
 
-  <text x="38" y="58" class="title">IntelliHire</text>
-  <text x="38" y="96" class="title" style="font-size:31px">Application &amp; Security Overview</text>
-  <text x="42" y="124" class="subtitle">Actual PHP MVC recruitment app: public entry point, roles, services, MySQL data, local AI helpers and security controls.</text>
+  <text class="title" x="30" y="45">IntelliHire</text>
+  <text class="title" x="30" y="78" style="font-size:29px">Application Overview</text>
+  <text class="sub" x="31" y="102">Actual PHP MVC recruitment app: users, public entry point, controllers, services, data, external integrations and security controls.</text>
 
-  <g transform="translate(42 160)">
-    <rect class="box" x="0" y="0" width="230" height="126"/>
-    <text class="label" x="16" y="26">Key</text>
-    <line class="key-line" x1="18" y1="48" x2="70" y2="48" stroke="#2e455d" marker-end="url(#arrow)"/>
-    <text class="tiny" x="84" y="52">HTTP request / app data</text>
-    <line class="key-line" x1="18" y1="72" x2="70" y2="72" stroke="#6a7c91" stroke-dasharray="7 6" marker-end="url(#arrowSoft)"/>
-    <text class="tiny" x="84" y="76">Session / internal call</text>
-    <line class="key-line" x1="18" y1="96" x2="70" y2="96" stroke="#e45c76" marker-end="url(#arrowRisk)"/>
-    <text class="tiny" x="84" y="100">Risk / attack surface</text>
+  <!-- Key -->
+  <g transform="translate(32 128)">
+    <rect class="panel" width="178" height="105"/>
+    <text class="bold" x="13" y="25">Key</text>
+    <line class="line" x1="15" y1="45" x2="60" y2="45"/>
+    <text class="tiny" x="75" y="49">HTTP / app data</text>
+    <line class="dash" x1="15" y1="67" x2="60" y2="67"/>
+    <text class="tiny" x="75" y="71">Session / internal call</text>
+    <line class="risk-line" x1="15" y1="89" x2="60" y2="89"/>
+    <text class="tiny" x="75" y="93">Risk surface</text>
+  </g>
+
+  <!-- Risk callouts around left/top -->
+  <g transform="translate(222 82)">
+    <rect class="risk" width="162" height="56"/>
+    <text class="risk-title" x="12" y="20">CSRF surface</text>
+    <text class="risk-text" x="12" y="39">POST forms require</text>
+    <text class="risk-text" x="12" y="52">session token checks.</text>
+  </g>
+
+  <g transform="translate(460 28)">
+    <rect class="risk" width="170" height="64"/>
+    <text class="risk-title" x="12" y="22">Direct entry point</text>
+    <text class="risk-text" x="12" y="42">All requests pass through</text>
+    <text class="risk-text" x="12" y="56">public/index.php.</text>
+  </g>
+
+  <g transform="translate(32 251)">
+    <rect class="risk" width="158" height="64"/>
+    <text class="risk-title" x="12" y="22">Credential / session</text>
+    <text class="risk-text" x="12" y="43">Role checks reduce</text>
+    <text class="risk-text" x="12" y="57">unauthorized access.</text>
   </g>
 
   <!-- User environment -->
-  <g filter="url(#shadow)">
-    <rect class="zone" x="44" y="340" width="285" height="335"/>
-    <text class="zone-title" x="116" y="332">User environment</text>
+  <g class="shadow">
+    <rect class="zone" x="32" y="345" width="235" height="250"/>
+  </g>
+  <text class="zone-label" x="92" y="337">User environment</text>
+
+  <g transform="translate(60 378)">
+    <rect class="panel-strong" width="178" height="78"/>
+    <text class="bold" x="72" y="23">Browser</text>
+    <circle class="icon" cx="40" cy="48" r="14"/>
+    <path class="icon" d="M25 69c5-16 25-16 30 0"/>
+    <rect class="icon" x="106" y="38" width="38" height="25" rx="2"/>
+    <line class="icon" x1="113" y1="68" x2="139" y2="68"/>
+    <text class="tiny" x="61" y="48">Recruiter</text>
+    <text class="tiny" x="61" y="62">Candidate</text>
   </g>
 
-  <g transform="translate(78 374)">
-    <rect class="box-strong" x="0" y="0" width="218" height="98"/>
-    <text class="label" x="72" y="27">Browser</text>
-    <circle cx="50" cy="57" r="16" class="icon-line"/>
-    <path d="M34 82c4-18 28-18 32 0" class="icon-line"/>
-    <rect x="132" y="40" width="42" height="30" rx="3" class="icon-line"/>
-    <path d="M141 78h24" class="icon-line"/>
-    <text class="small" x="76" y="56">Recruiter</text>
-    <text class="small" x="76" y="75">Candidate</text>
-  </g>
-
-  <g transform="translate(78 496)">
-    <rect class="box" x="0" y="0" width="218" height="132"/>
-    <text class="label" x="18" y="28">Client-side UI</text>
-    <text class="small" x="18" y="54">- PHP-rendered pages</text>
-    <text class="small" x="18" y="76">- Vue islands: notifications</text>
-    <text class="small" x="18" y="98">- Ajax filters for candidates</text>
-    <text class="small" x="18" y="120">- Chart.js dashboard</text>
-  </g>
-
-  <g transform="translate(42 250)">
-    <rect class="risk" x="0" y="0" width="198" height="72"/>
-    <text class="risk-title" x="14" y="24">Credential / session</text>
-    <text class="risk-text" x="14" y="45">hijack risk reduced by</text>
-    <text class="risk-text" x="14" y="62">sessions + role checks</text>
+  <g transform="translate(60 476)">
+    <rect class="panel" width="178" height="110"/>
+    <text class="bold" x="18" y="25">Client-side UI</text>
+    <text class="small" x="18" y="49">- PHP-rendered pages</text>
+    <text class="small" x="18" y="68">- Vue notifications</text>
+    <text class="small" x="18" y="87">- Ajax filters</text>
+    <text class="small" x="18" y="106">- Chart.js dashboard</text>
   </g>
 
   <!-- Public web environment -->
-  <g filter="url(#shadow)">
-    <rect class="zone" x="410" y="145" width="275" height="630"/>
-    <text class="zone-title" x="455" y="137">Public web environment</text>
+  <g class="shadow">
+    <rect class="zone" x="332" y="151" width="230" height="494"/>
+  </g>
+  <text class="zone-label" x="368" y="143">Public web environment</text>
+
+  <g transform="translate(363 182)">
+    <rect class="panel-strong" width="166" height="80"/>
+    <text class="bold" x="22" y="26">WAMP / Apache</text>
+    <text class="small" x="22" y="50">Single entry point</text>
+    <text class="small" x="22" y="68">public/index.php</text>
   </g>
 
-  <g transform="translate(448 182)">
-    <rect class="box-strong" x="0" y="0" width="200" height="96"/>
-    <text class="label" x="26" y="28">WAMP / Apache</text>
-    <text class="small" x="26" y="54">Single entry point</text>
-    <text class="small" x="26" y="76">public/index.php</text>
+  <g transform="translate(363 294)">
+    <rect class="panel" width="166" height="104"/>
+    <text class="bold" x="22" y="25">Static assets</text>
+    <text class="small" x="22" y="50">style.css</text>
+    <text class="small" x="22" y="69">main.js</text>
+    <text class="small" x="22" y="88">vue-islands.js</text>
   </g>
 
-  <g transform="translate(448 312)">
-    <rect class="box" x="0" y="0" width="200" height="126"/>
-    <text class="label" x="22" y="28">Static assets</text>
-    <text class="small" x="22" y="55">style.css</text>
-    <text class="small" x="22" y="78">main.js</text>
-    <text class="small" x="22" y="101">vue-islands.js</text>
+  <g transform="translate(363 430)">
+    <rect class="panel" width="166" height="104"/>
+    <text class="bold" x="22" y="25">Uploads</text>
+    <text class="small" x="22" y="50">CV files in</text>
+    <text class="small" x="22" y="69">public/uploads</text>
+    <text class="tiny" x="22" y="90">PDF / DOC / DOCX checks</text>
   </g>
 
-  <g transform="translate(448 474)">
-    <rect class="box" x="0" y="0" width="200" height="124"/>
-    <text class="label" x="22" y="28">Uploads</text>
-    <text class="small" x="22" y="55">CV files in</text>
-    <text class="small" x="22" y="78">public/uploads</text>
-    <text class="tiny" x="22" y="102">PDF / DOC / DOCX validation</text>
-  </g>
-
-  <g transform="translate(372 686)">
-    <rect class="risk" x="0" y="0" width="240" height="76"/>
-    <text class="risk-title" x="16" y="25">Upload exposure</text>
-    <text class="risk-text" x="16" y="48">CVs are public files; validate</text>
-    <text class="risk-text" x="16" y="64">type, size and access needs.</text>
+  <g transform="translate(300 571)">
+    <rect class="risk" width="198" height="64"/>
+    <text class="risk-title" x="13" y="22">Upload exposure</text>
+    <text class="risk-text" x="13" y="43">CVs are public files;</text>
+    <text class="risk-text" x="13" y="57">validate type, size, access.</text>
   </g>
 
   <!-- Application environment -->
-  <g filter="url(#shadow)">
-    <rect class="zone" x="760" y="118" width="410" height="657"/>
-    <text class="zone-title" x="862" y="110">Application environment</text>
+  <g class="shadow">
+    <rect class="zone" x="622" y="127" width="337" height="498"/>
+  </g>
+  <text class="zone-label" x="710" y="119">Application environment</text>
+
+  <g transform="translate(655 151)">
+    <rect class="panel-strong" width="255" height="82"/>
+    <text class="bold" x="20" y="27">Core router and guards</text>
+    <text class="small" x="20" y="51">App.php dispatches routes</text>
+    <text class="small" x="20" y="70">Auth.php roles + Csrf.php tokens</text>
   </g>
 
-  <g transform="translate(800 150)">
-    <rect class="box-strong" x="0" y="0" width="330" height="98"/>
-    <text class="label" x="22" y="29">Core router and guards</text>
-    <text class="small" x="22" y="55">App.php dispatches routes</text>
-    <text class="small" x="22" y="78">Auth.php role checks + Csrf.php tokens</text>
+  <g transform="translate(660 240)">
+    <rect class="chip" width="73" height="22"/>
+    <text class="chip-text" x="12" y="14">CSRF tokens</text>
+    <rect class="chip" x="83" width="74" height="22"/>
+    <text class="chip-text" x="96" y="14">Role checks</text>
+    <rect class="chip" x="167" width="76" height="22"/>
+    <text class="chip-text" x="181" y="14">Sessions</text>
   </g>
 
-  <g transform="translate(800 285)">
-    <rect class="box" x="0" y="0" width="330" height="120"/>
-    <text class="label" x="22" y="29">Controllers</text>
-    <text class="small" x="22" y="56">Auth, Dashboard, Offre</text>
-    <text class="small" x="22" y="78">Candidature, Entretien</text>
-    <text class="small" x="22" y="100">Ajax, AI summary endpoints</text>
+  <g transform="translate(655 271)">
+    <rect class="panel" width="255" height="97"/>
+    <text class="bold" x="20" y="27">Controllers</text>
+    <text class="small" x="20" y="51">Auth, Dashboard, Offre</text>
+    <text class="small" x="20" y="70">Candidature, Entretien</text>
+    <text class="small" x="20" y="89">Ajax, AI summary endpoints</text>
   </g>
 
-  <g transform="translate(800 442)">
-    <rect class="box" x="0" y="0" width="330" height="128"/>
-    <text class="label" x="22" y="29">Services</text>
-    <text class="small" x="22" y="56">Matching score and workflow rules</text>
-    <text class="small" x="22" y="78">Notifications and mail fallback</text>
-    <text class="small" x="22" y="100">Local CV parser / AI insights</text>
+  <g transform="translate(655 400)">
+    <rect class="panel" width="255" height="104"/>
+    <text class="bold" x="20" y="27">Services</text>
+    <text class="small" x="20" y="51">Matching score and workflow rules</text>
+    <text class="small" x="20" y="70">Notifications and mail fallback</text>
+    <text class="small" x="20" y="89">Local CV parser / AI insights</text>
   </g>
 
-  <g transform="translate(800 612)">
-    <rect class="box-db" x="0" y="0" width="330" height="112"/>
-    <text class="label" x="22" y="29">Models + PDO</text>
-    <text class="small" x="22" y="56">Prepared statements</text>
-    <text class="small" x="22" y="78">BaseModel CRUD helpers</text>
-    <text class="small" x="22" y="100">Business queries per entity</text>
+  <g transform="translate(665 511)">
+    <rect class="chip" width="112" height="22"/>
+    <text class="chip-text" x="13" y="14">Upload validation</text>
+    <rect class="chip" x="122" width="112" height="22"/>
+    <text class="chip-text" x="136" y="14">Local AI helper</text>
   </g>
 
-  <!-- Database -->
-  <g filter="url(#shadow)">
-    <rect class="zone" x="780" y="805" width="560" height="70"/>
-    <text class="zone-title" x="968" y="797">Database environment</text>
+  <g transform="translate(655 548)">
+    <rect class="data" width="255" height="64"/>
+    <text class="bold" x="20" y="25">Models + PDO</text>
+    <text class="small" x="20" y="47">Prepared statements + FK-backed data</text>
   </g>
-  <g transform="translate(812 822)">
-    <rect class="box-db" x="0" y="0" width="496" height="34"/>
-    <text class="small" x="18" y="22">MySQL: utilisateur, role, offre_emploi, candidature, entretien, notification, competence, historique</text>
+
+  <!-- Security controls -->
+  <g transform="translate(845 34)">
+    <rect class="safe" width="210" height="56"/>
+    <path class="icon" d="M24 14l12 5v15c0 10-6 16-12 20-6-4-12-10-12-20V19z"/>
+    <text class="bold" x="58" y="23">Security controls</text>
+    <text class="tiny" x="58" y="41">CSRF, role checks, PDO, uploads</text>
   </g>
 
   <!-- External dependencies -->
-  <g filter="url(#shadow)">
-    <rect class="zone" x="1188" y="142" width="170" height="364"/>
-    <text class="zone-title" x="1202" y="134">External dependencies</text>
+  <g class="shadow">
+    <rect class="zone" x="975" y="151" width="95" height="298"/>
+  </g>
+  <text class="zone-label" x="967" y="143">External deps</text>
+
+  <g transform="translate(994 176)">
+    <rect class="ext" width="58" height="62"/>
+    <text class="bold" x="12" y="21" style="font-size:10px">CDN</text>
+    <text class="tiny" x="12" y="40">Chart.js</text>
+    <text class="tiny" x="12" y="54">Fonts</text>
   </g>
 
-  <g transform="translate(1212 174)">
-    <rect class="box-ext" x="0" y="0" width="122" height="76"/>
-    <text class="label" x="18" y="26" style="font-size:13px">CDN assets</text>
-    <text class="tiny" x="18" y="48">Chart.js</text>
-    <text class="tiny" x="18" y="64">Google Fonts</text>
+  <g transform="translate(994 274)">
+    <rect class="ext" width="58" height="66"/>
+    <text class="bold" x="9" y="21" style="font-size:10px">SMTP</text>
+    <text class="tiny" x="9" y="40">PHPMailer</text>
+    <text class="tiny" x="9" y="54">optional</text>
   </g>
 
-  <g transform="translate(1212 284)">
-    <rect class="box-ext" x="0" y="0" width="122" height="84"/>
-    <text class="label" x="18" y="26" style="font-size:13px">SMTP mail</text>
-    <text class="tiny" x="18" y="48">PHPMailer if</text>
-    <text class="tiny" x="18" y="64">vendor exists</text>
+  <g transform="translate(994 376)">
+    <rect class="ext" width="58" height="58"/>
+    <text class="bold" x="9" y="21" style="font-size:10px">Fallback</text>
+    <text class="tiny" x="9" y="42">mail.log</text>
   </g>
 
-  <g transform="translate(1212 396)">
-    <rect class="box-ext" x="0" y="0" width="122" height="76"/>
-    <text class="label" x="18" y="26" style="font-size:13px">Fallback</text>
-    <text class="tiny" x="18" y="48">storage/mail.log</text>
-    <text class="tiny" x="18" y="64">no app crash</text>
+  <g transform="translate(952 484)">
+    <rect class="risk" width="112" height="72"/>
+    <text class="risk-title" x="10" y="22">CDN availability</text>
+    <text class="risk-text" x="10" y="43">Charts/fonts need</text>
+    <text class="risk-text" x="10" y="57">internet access.</text>
   </g>
 
-  <!-- Security controls panel -->
-  <g transform="translate(1022 34)">
-    <rect class="box-strong" x="0" y="0" width="318" height="66"/>
-    <path d="M29 18l22 8v17c0 16-11 24-22 29-11-5-22-13-22-29V26z" transform="translate(16 -4) scale(.68)" class="icon-line"/>
-    <text class="label" x="72" y="25">Security controls</text>
-    <text class="tiny" x="72" y="45">CSRF tokens, Auth::require roles, PDO prepared statements, upload validation</text>
+  <!-- Database -->
+  <g class="shadow">
+    <rect class="zone" x="640" y="650" width="430" height="46"/>
+  </g>
+  <text class="zone-label" x="793" y="642">Database</text>
+  <g transform="translate(665 663)">
+    <rect class="data" width="380" height="20"/>
+    <text class="tiny" x="12" y="14">MySQL: users, roles, offers, applications, interviews, notifications, skills, history</text>
   </g>
 
-  <!-- Risk callouts -->
-  <g transform="translate(280 126)">
-    <rect class="risk" x="0" y="0" width="190" height="68"/>
-    <text class="risk-title" x="14" y="24">CSRF attack surface</text>
-    <text class="risk-text" x="14" y="46">POST forms now require</text>
-    <text class="risk-text" x="14" y="61">session token checks.</text>
+  <g transform="translate(885 566)">
+    <rect class="risk" width="140" height="64"/>
+    <text class="risk-title" x="12" y="22">Demo data issue</text>
+    <text class="risk-text" x="12" y="43">cv_demo paths can</text>
+    <text class="risk-text" x="12" y="57">point to missing files.</text>
   </g>
 
-  <g transform="translate(585 40)">
-    <rect class="risk" x="0" y="0" width="190" height="72"/>
-    <text class="risk-title" x="14" y="24">Direct entry point</text>
-    <text class="risk-text" x="14" y="46">All app requests pass</text>
-    <text class="risk-text" x="14" y="62">through public/index.php.</text>
+  <g transform="translate(735 608)">
+    <rect class="chip" width="104" height="22"/>
+    <text class="chip-text" x="13" y="14">Prepared SQL</text>
+    <rect class="chip" x="112" width="96" height="22"/>
+    <text class="chip-text" x="128" y="14">FK constraints</text>
   </g>
 
-  <g transform="translate(1018 742)">
-    <rect class="risk" x="0" y="0" width="214" height="68"/>
-    <text class="risk-title" x="14" y="24">Data breach risk</text>
-    <text class="risk-text" x="14" y="46">Protect database credentials</text>
-    <text class="risk-text" x="14" y="61">and exported demo data.</text>
+  <!-- Contribution note: intentionally quiet -->
+  <g transform="translate(32 665)">
+    <rect class="credit" width="470" height="42"/>
+    <circle class="dot-dina" cx="18" cy="15" r="5"/>
+    <text class="credit-name" x="32" y="19">EL MEAAMMAR Dina</text>
+    <text class="credit-text" x="155" y="19">backend package from ZIP: offers, interviews, models, config, schema</text>
+    <circle class="dot-nizar" cx="18" cy="32" r="5"/>
+    <text class="credit-name" x="32" y="36">NEGAGZA Nizar</text>
+    <text class="credit-text" x="155" y="36">UI/UX, integration, security, docs and deployment</text>
   </g>
 
-  <g transform="translate(1188 548)">
-    <rect class="risk" x="0" y="0" width="172" height="82"/>
-    <text class="risk-title" x="14" y="24">CDN availability</text>
-    <text class="risk-text" x="14" y="47">Charts/fonts depend</text>
-    <text class="risk-text" x="14" y="63">on internet access</text>
-  </g>
+  <!-- Main flows -->
+  <path class="line" d="M238 416 C290 410 295 235 363 222"/>
+  <text class="tiny" x="256" y="375">GET / POST</text>
+  <path class="dash" d="M238 520 C300 516 305 346 363 344"/>
+  <text class="tiny" x="286" y="477">assets</text>
+  <path class="line" d="M529 222 C585 220 606 184 655 184"/>
+  <path class="line" d="M783 233 L783 271"/>
+  <path class="line" d="M783 368 L783 400"/>
+  <path class="line" d="M783 504 L783 548"/>
+  <path class="line" d="M783 612 C790 632 815 642 835 663"/>
 
-  <g transform="translate(1132 654)">
-    <rect class="risk" x="0" y="0" width="208" height="76"/>
-    <text class="risk-title" x="14" y="25">Known demo data issue</text>
-    <text class="risk-text" x="14" y="48">Seeded cv_demo paths can</text>
-    <text class="risk-text" x="14" y="64">point to missing files.</text>
-  </g>
+  <path class="risk-line" d="M384 110 C410 130 421 158 421 182"/>
+  <path class="risk-line" d="M383 571 C402 540 407 531 430 534"/>
+  <path class="risk-line" d="M885 594 C858 608 832 620 800 650"/>
+  <path class="risk-line" d="M999 484 C1001 464 1003 453 1009 434"/>
 
-  <!-- Contribution note -->
-  <g transform="translate(42 790)">
-    <rect class="credit" x="0" y="0" width="640" height="76"/>
-    <text class="credit-title" x="18" y="24">Contribution map</text>
-    <circle class="credit-dina" cx="24" cy="45" r="6"/>
-    <text class="credit-name" x="40" y="49">EL MEAAMMAR Dina</text>
-    <text class="credit-text" x="174" y="49">backend package: offers, interviews, models, database config and schema</text>
-    <circle class="credit-nizar" cx="24" cy="64" r="6"/>
-    <text class="credit-name" x="40" y="68">NEGAGZA Nizar</text>
-    <text class="credit-text" x="174" y="68">UI/UX, integration, security hardening, documentation and deployment</text>
-  </g>
-
-  <!-- Flows -->
-  <path class="flow" d="M296 424 C350 424 372 230 448 230"/>
-  <text class="tiny" x="326" y="354">GET / POST</text>
-
-  <path class="flow-soft" d="M548 278 L548 312"/>
-  <path class="flow-soft" d="M548 438 L548 474"/>
-  <path class="flow" d="M648 230 C706 230 730 198 800 198"/>
-  <path class="flow" d="M965 248 L965 285"/>
-  <path class="flow" d="M965 405 L965 442"/>
-  <path class="flow" d="M965 570 L965 612"/>
-  <path class="flow" d="M965 724 C966 758 998 780 1030 822"/>
-
-  <path class="flow-dash" d="M278 520 C350 520 366 382 448 374"/>
-  <text class="tiny" x="310" y="474">assets</text>
-
-  <path class="flow-risk" d="M280 160 C360 160 390 182 448 206"/>
-  <path class="flow-risk" d="M486 722 C520 660 520 630 548 598"/>
-  <path class="flow-risk" d="M1124 752 C1110 732 1100 724 1084 724"/>
-  <path class="flow-risk" d="M1232 654 C1210 620 1200 590 1218 548"/>
-
-  <path class="flow-ext" d="M1130 344 C1160 344 1182 214 1212 214"/>
-  <path class="flow-ext" d="M1130 504 C1160 504 1182 324 1212 324"/>
-  <path class="flow-ext" d="M1130 524 C1166 524 1186 434 1212 434"/>
-
-  <!-- Internal security labels -->
-  <g transform="translate(810 254)">
-    <rect class="pill" x="0" y="0" width="98" height="24"/>
-    <text class="pill-text" x="15" y="16">CSRF tokens</text>
-    <rect class="pill" x="108" y="0" width="89" height="24"/>
-    <text class="pill-text" x="122" y="16">Role checks</text>
-    <rect class="pill" x="207" y="0" width="108" height="24"/>
-    <text class="pill-text" x="222" y="16">Session auth</text>
-  </g>
-
-  <g transform="translate(810 578)">
-    <rect class="pill" x="0" y="0" width="133" height="24"/>
-    <text class="pill-text" x="15" y="16">Upload validation</text>
-    <rect class="pill" x="143" y="0" width="150" height="24"/>
-    <text class="pill-text" x="157" y="16">Local AI, no API key</text>
-  </g>
-
-  <g transform="translate(810 732)">
-    <rect class="pill" x="0" y="0" width="144" height="24"/>
-    <text class="pill-text" x="15" y="16">Prepared queries</text>
-    <rect class="pill" x="154" y="0" width="116" height="24"/>
-    <text class="pill-text" x="169" y="16">FK constraints</text>
-  </g>
+  <path class="ext-line" d="M910 320 C950 302 960 212 994 207"/>
+  <path class="ext-line" d="M910 455 C950 432 958 310 994 307"/>
+  <path class="ext-line" d="M910 474 C948 464 958 405 994 405"/>
 </svg>
